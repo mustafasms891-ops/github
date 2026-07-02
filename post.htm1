@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>نشر إعلان - حراج العراق</title>
+
+<style>
+body{
+font-family:Arial,sans-serif;
+background:#f5f5f5;
+margin:0;
+}
+
+header{
+background:#0d6efd;
+color:white;
+text-align:center;
+padding:20px;
+}
+
+.container{
+max-width:900px;
+margin:30px auto;
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,.1);
+}
+
+input,textarea,select{
+width:100%;
+padding:10px;
+margin:10px 0;
+border:1px solid #ccc;
+border-radius:5px;
+}
+
+button{
+background:#0d6efd;
+color:white;
+padding:12px 20px;
+border:none;
+cursor:pointer;
+border-radius:5px;
+}
+
+button:hover{
+background:#0b5ed7;
+}
+
+.preview{
+border:1px dashed #aaa;
+padding:10px;
+margin-top:15px;
+}
+
+footer{
+background:#222;
+color:white;
+text-align:center;
+padding:20px;
+margin-top:30px;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h1>نشر إعلان جديد</h1>
+</header>
+
+<div class="container">
+
+<p>املأ البيانات التالية لنشر إعلانك:</p>
+
+<input type="text" id="title" placeholder="عنوان الإعلان">
+
+<select id="category">
+<option>اختر التصنيف</option>
+<option>سيارات</option>
+<option>عقارات</option>
+<option>أجهزة إلكترونية</option>
+<option>وظائف</option>
+<option>أخرى</option>
+</select>
+
+<input type="text" id="price" placeholder="السعر (اختياري)">
+
+<textarea id="desc" rows="6" placeholder="وصف الإعلان"></textarea>
+
+<button onclick="previewAd()">معاينة الإعلان</button>
+<button onclick="publishAd()">نشر الإعلان</button>
+
+<div class="preview" id="previewBox">
+<h3>المعاينة</h3>
+<p>سيظهر هنا شكل الإعلان قبل النشر</p>
+</div>
+
+</div>
+
+<footer>
+جميع الحقوق محفوظة © 2026 حراج العراق
+</footer>
+
+<script>
+function previewAd(){
+let title = document.getElementById("title").value;
+let category = document.getElementById("category").value;
+let price = document.getElementById("price").value;
+let desc = document.getElementById("desc").value;
+
+document.getElementById("previewBox").innerHTML = 
+<h3>${title}</h3>
+<p><b>التصنيف:</b> ${category}</p>
+<p><b>السعر:</b> ${price}</p>
+<p>${desc}</p>
+;
+}
+
+function publishAd(){
+alert("تم نشر الإعلان (حالياً بدون قاعدة بيانات)");
+}
+</script>
+
+</body>
+</html>
