@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>من نحن - حراج العراق</title>
+
+<style>
+body{
+    font-family:Arial,sans-serif;
+    background:#f5f5f5;
+    margin:0;
+}
+header{
+    background:#0d6efd;
+    color:#fff;
+    text-align:center;
+    padding:20px;
+}
+.container{
+    max-width:900px;
+    margin:30px auto;
+    background:#fff;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,.1);
+}
+a{
+    color:#0d6efd;
+    text-decoration:none;
+}
+footer{
+    text-align:center;
+    padding:20px;
+    margin-top:30px;
+    background:#222;
+    color:white;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>من نحن</h1>
+</header>
+
+<div class="container">
+
+<h2>مرحبًا بكم في حراج العراق</h2>
+
+<p>
+حراج العراق هو موقع إلكتروني يهدف إلى تسهيل بيع وشراء السيارات والعقارات والهواتف والأجهزة الإلكترونية والوظائف وغيرها داخل العراق.
+</p>
+
+<p>
+نسعى إلى توفير منصة سهلة وآمنة تساعد المستخدمين على الوصول إلى الإعلانات بسرعة وسهولة.
+</p>
+
+<p>
+إذا كانت لديكم أي استفسارات يمكنكم التواصل معنا عبر صفحة <a href="contact.html">اتصل بنا</a>.
+</p>
+
+<p>
+<a href="index.html">العودة إلى الصفحة الرئيسية</a>
+</p>
+
+</div>
+
+<footer>
+جميع الحقوق محفوظة © 2026 حراج العراق
+</footer>
+
+</body>
+</html>
