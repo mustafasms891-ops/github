@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>حراج العراق</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background:#f2f4f8;
+}
+
+/* الهيدر */
+header{
+background:linear-gradient(135deg,#0d6efd,#0a58ca);
+color:white;
+padding:25px;
+text-align:center;
+}
+
+header h1{
+margin:0;
+font-size:28px;
+}
+
+/* شريط الأزرار */
+.nav{
+display:flex;
+justify-content:center;
+gap:10px;
+flex-wrap:wrap;
+padding:15px;
+}
+
+.nav a, .nav button{
+border:none;
+padding:10px 15px;
+border-radius:8px;
+cursor:pointer;
+font-size:14px;
+text-decoration:none;
+}
+
+.nav a{
+background:#0d6efd;
+color:white;
+}
+
+.nav button{
+background:#dc3545;
+color:white;
+}
+
+/* الحاوية */
+.container{
+max-width:1000px;
+margin:auto;
+padding:10px;
+}
+
+/* كرت الإعلان */
+.ad{
+background:white;
+padding:15px;
+margin:10px 0;
+border-radius:12px;
+box-shadow:0 4px 10px rgba(0,0,0,0.08);
+transition:0.2s;
+}
+
+.ad:hover{
+transform:scale(1.01);
+}
+
+.ad h3{
+margin:0;
+color:#0d6efd;
+}
+
+.meta{
+font-size:13px;
+color:#666;
+margin-top:5px;
+}
+
+/* زر */
+.btn{
+display:inline-block;
+margin-top:10px;
+background:#198754;
+color:white;
+padding:7px 12px;
+border-radius:6px;
+font-size:13px;
+}
+
+/* فوتر */
+footer{
+text-align:center;
+padding:20px;
+background:#111;
+color:white;
+margin-top:30px;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h1>حراج العراق</h1>
+<p>بيع وشراء بكل سهولة</p>
+</header>
+
+<div class="nav">
+<a href="post.html">➕ نشر إعلان</a>
+<button onclick="clearAds()">🗑 حذف الإعلانات</button>
+</div>
+
+<div class="container" id="adsBox"></div>
+
+<footer>
+© 2026 حراج العراق - جميع الحقوق محفوظة
+</footer>
+
+<script>
+
+function loadAds(){
+let ads = JSON.parse(localStorage.getItem("ads") || "[]");
+let box = document.getElementById("adsBox");
+
+box.innerHTML = "";
+
+if(ads.length === 0){
+box.innerHTML = "<p style='text-align:center'>لا توجد إعلانات حالياً</p>";
+return;
+}
+
+ads.reverse().forEach(a => {
+box.innerHTML += 
+<div class="ad">
+<h3>${a.title}</h3>
+<div class="meta">📂 ${a.category} | 💰 ${a.price}</div>
+<p>${a.desc}</p>
+<span class="btn">تفاصيل</span>
+</div>
+;
+});
+}
+
+function clearAds(){
+localStorage.removeItem("ads");
+loadAds();
+}
+
+loadAds();
+
+</script>
+
+</body>
+</html>
